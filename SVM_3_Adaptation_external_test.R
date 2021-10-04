@@ -21,7 +21,17 @@ package.check <- lapply(
 )
 
 # setting the working directory
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 setwd("C:/Users/Robert Ultrabook/SVM-R")
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 
 
 ## Create sub directory
@@ -31,17 +41,30 @@ dir.create(paste("external_R", sep = ""))
 
 # Loading the top 100 features and trimming the original data
 # Making a vector of the top 100 from prediction
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 original_csv_top100_features = read.csv("C:/Users/Robert Ultrabook/SVM-R/pred_R/R_Top 100 predictors.csv")
 top100 = original_csv_top100_features[, 1]
 top100 <- as.vector(top100)
-
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 # Making"internal" data set. Used to create the final model.
 dat = read.csv("C:/Users/Robert Ultrabook/SVM-R/data.csv")
 dat_top100_all_columns = subset(dat, select = c("Sample", "Class", top100))
 # Making class into a factor
 dat_top100_all_columns$Class <- as.factor(dat_top100_all_columns$Class)
 dat_top100 <- as.data.frame(dat_top100_all_columns[,-1])
-
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 # Making "external" data set. Used to test the final model.
 external_data = read.csv("C:/Users/Robert Ultrabook/SVM-R/test_set(ex).csv")
 external_data_top100_all_columns = subset(external_data, select = c("Sample", "Class", top100))
@@ -49,7 +72,11 @@ external_data_top100_all_columns = subset(external_data, select = c("Sample", "C
 external_data_top100_all_columns$Class <- as.factor(external_data_top100_all_columns$Class)
 external_data_top100 <- as.data.frame(external_data_top100_all_columns[,-1])
 
-
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 # Creating excel csv of the trimmed data.
 write.csv(dat_top100_all_columns, file = paste("external_R", "/", "R", "_data_top100", sep = "", ".csv"), row.names = FALSE)
 write.csv(external_data_top100_all_columns, file = paste("external_R", "/", "R", "_external_data_top100", sep = "", ".csv"), row.names = FALSE)

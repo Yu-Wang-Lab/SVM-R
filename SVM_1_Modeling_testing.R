@@ -20,7 +20,17 @@ package.check <- lapply(
 
 
 # setting the working directory
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 setwd("C:/Users/Robert Ultrabook/SVM-R")
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 
 # creating a cycle count of (n).
 cycle_times <- 1
@@ -44,7 +54,17 @@ for (n in 1:cycle_times) {
   
   ## Randomly split data into a training set and a test set
   library(readxl)
+  ###########################################
+  #                                         #
+  #       Change to desired file            #
+  #                                         #
+  ###########################################
   file <- "data.csv"
+  ###########################################
+  #                                         #
+  #       Change to desired file            #
+  #                                         #
+  ###########################################
   data <- read.table(file, row.names = 1, header = T, sep = ",")
   nsample <- nrow(data)  # sample size
   nclass <- 2  # total class number of samples

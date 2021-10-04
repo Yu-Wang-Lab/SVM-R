@@ -20,16 +20,35 @@ package.check <- lapply(
 
 
 # setting the working directory
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 setwd("C:/Users/Robert Ultrabook/SVM-R")
+###########################################
+#                                         #
+#       Change to desired location        #
+#                                         #
+###########################################
 
   ## Create sub directory
   dir.create("pred_R")
   # library(readxl)
   ## Importing the data
+  ###########################################
+  #                                         #
+  #       Change to desired file            #
+  #                                         #
+  ###########################################
   CP_data <- read.csv("C:/Users/Robert Ultrabook/SVM-R/data.csv")
   CP_data$Class <- as.factor(CP_data$Class)
   CP_data <- as.data.frame(CP_data[,-1])
-  
+  ###########################################
+  #                                         #
+  #       Change to desired file            #
+  #                                         #
+  ###########################################
   #library e1071
   ## Fitting Kernel SVM to the Training set
   set.seed(888)
