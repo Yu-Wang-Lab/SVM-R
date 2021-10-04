@@ -21,13 +21,13 @@ package.check <- lapply(
 
 
 # setting the working directory
-setwd("C:/Users/Robert Ultrabook/Desktop/Testing_ground")
+setwd("C:/Users/Robert Ultrabook/SVM-R")
 
   ## Create sub directory
   dir.create("pred_R")
   # library(readxl)
   ## Importing the data
-  CP_data <- read.csv("C:/Users/Robert Ultrabook/Desktop/SVM/Testing_SVM/data.csv")
+  CP_data <- read.csv("C:/Users/Robert Ultrabook/SVM-R/data.csv")
   CP_data$Class <- as.factor(CP_data$Class)
   CP_data <- as.data.frame(CP_data[,-1])
   
@@ -40,7 +40,7 @@ setwd("C:/Users/Robert Ultrabook/Desktop/Testing_ground")
   
  
   # Saving the model.
-  saveRDS(classifier, file = paste("pred_R", "/", "R", "_saved_model", sep = "", ".csv"))
+  saveRDS(classifier, file = paste("pred_R", "/", "R", "_saved_model", sep = "", ".rds"))
   
   
   # Finding the top 100 variables and their coefficients.
