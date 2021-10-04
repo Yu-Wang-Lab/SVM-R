@@ -5,8 +5,7 @@
 
 ## First specify the packages of interest
 packages = c("readxl", "e1071",
-             "caret", "caTools",
-             "pROC", "rpart")
+             "caret")
 
 ## Now load or install & load all
 package.check <- lapply(
