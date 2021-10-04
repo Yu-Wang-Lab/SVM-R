@@ -84,7 +84,7 @@ for (n in 1:cycle_times) {
   
   
   # Making the Confusion Matrix
-  cm_tosave = confusionMatrix(y_pred, test_set_no_name$Class)
+  cm_tosave = confusionMatrix(y_pred, test_set_no_name$Class, positive = "1")
   
   # Plotting the confusion matrix
   draw_confusion_matrix <- function(cm) {

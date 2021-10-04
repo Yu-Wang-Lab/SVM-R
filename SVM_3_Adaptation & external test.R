@@ -67,7 +67,7 @@ classifier = svm(Class ~ ., data = dat_top100,
 y_pred = predict(classifier, newdata = external_data_top100[-1])
 
 # Making the Confusion Matrix
-cm_tosave = confusionMatrix(y_pred, external_data_top100$Class)
+cm_tosave = confusionMatrix(y_pred, external_data_top100$Class, positive = "1")
 
 # Plotting the confusion matrix
 draw_confusion_matrix <- function(cm) {
@@ -114,10 +114,10 @@ draw_confusion_matrix <- function(cm) {
   text(30, 20, round(as.numeric(cm$overall[1]), 3), cex=1.4)
   text(70, 35, names(cm$overall[2]), cex=1.5, font=2)
   text(70, 20, round(as.numeric(cm$overall[2]), 3), cex=1.4)
-}  
+} 
 
 # Saving the confusion matrix
-jpeg(filename = paste("external_R", "/", "R", "_Confusion_Matrix", ".jpeg", sep = ""))
+jpeg(filename = paste("external_R", "/", "R", "_Confusion_Matrix", ".jpeg", sep = ""), width = 4.25, height = 4.25, units = "in", res = 300)
 q = draw_confusion_matrix(cm_tosave)
 print(q)
 dev.off()
